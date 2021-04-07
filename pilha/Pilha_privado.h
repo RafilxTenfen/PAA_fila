@@ -6,7 +6,7 @@
 struct Pilha {
   int topo;
   int tamanho_maximo;
-  int tamanho_info;
+  int tamanho_dados;
   void *dados;
 };
 

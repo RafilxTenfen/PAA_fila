@@ -8,10 +8,10 @@
 
 pPilha criaPilha(int tamanho_vetor, int tamanho_info) {
   pPilha pp = malloc(sizeof(struct Pilha));
-  pp->tamanho_info = tamanho_info;
+  pp->tamanho_dados = tamanho_info;
   pp->topo = 0;
   pp->tamanho_maximo = tamanho_vetor;
-  pp->dados = malloc(pp->tamanho_info * pp->tamanho_maximo);
+  pp->dados = malloc(pp->tamanho_dados * pp->tamanho_maximo);
   return pp;
 }
 
@@ -25,9 +25,9 @@ int destroiPilha(pPilha pp) {
 // adiciona elemento a pilha
 int empilha(pPilha p, void* elemento) {
   if (cheia(p)) return FALSE;
-  void* destination = p->dados + p->topo * p->tamanho_info;
+  void* destination = p->dados + p->topo * p->tamanho_dados;
   void* source = elemento;
-  int size = p->tamanho_info;
+  int size = p->tamanho_dados;
   memcpy(destination, source, size);
   p->topo++;
   return TRUE;
@@ -36,29 +36,29 @@ int empilha(pPilha p, void* elemento) {
 // remove elemento da pilha
 void* desempilha(pPilha p) {
   void* result = topo(p);
-  p->topo--;
+  if( result != 0 ) p->topo--;
   return result;
 }
 
 // retorna o valor do topo
 void* topo(pPilha p) {
   if (vaziaP(p)) return FALSE;
-  void* destination = malloc(p->tamanho_info);
-  void* source = p->dados + (p->topo - 1) * p->tamanho_info;
-  int size = p->tamanho_info;
+  void* destination = malloc(p->tamanho_dados);
+  void* source = p->dados + (p->topo - 1) * p->tamanho_dados;
+  int size = p->tamanho_dados;
   memcpy(destination, source, size);
   return destination;
 }
 
-int vaziaP(pPilha stack) {
-  if (stack->topo <= 0) {
+int vaziaP(pPilha p) {
+  if (p->topo <= 0) {
     return TRUE;
   }
   return FALSE;
 }
 
-int cheia(pPilha stack) {
-  if (stack->topo >= stack->tamanho_maximo)
+int cheia(pPilha p) {
+  if (p->topo >= p->tamanho_maximo)
     return TRUE;
   return FALSE;
 }
