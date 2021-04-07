@@ -11,6 +11,6 @@ struct Pilha {
 };
 
 int cheia(pPilha p);
-int vazia(pPilha p);
+int vaziaP(pPilha p);
 
 #endif

@@ -10,7 +10,7 @@ typedef struct Fila *fFila;
 fFila criar(int tamanho_dados);
 
 // enfileira um novo elemento ao fim da fila
-int insere(fFila f, void *elemento);
+int enfileirar(fFila f, void *elemento);
 
 // desinfileira o primeiro elemento da fila
 void* desenfileira(fFila f);

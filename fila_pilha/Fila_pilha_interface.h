@@ -21,7 +21,7 @@ Se estive cheia, criar nova pilha, adicionar elemento e enfileirar
 */
 
 // remove elemento da pilha
-void* remove(p_fila_pilha p);
+void* removeFP(p_fila_pilha p);
 
 // retorna o valor do topo
 void* topo(p_fila_pilha p);

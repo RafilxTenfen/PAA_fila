@@ -21,7 +21,7 @@ Fila *criar(int tamanho_dados) {
   return f;
 };
 
-int insere(Fila *f, void *elemento) {
+int enfileirar(Fila *f, void *elemento) {
   extern char _etext;
   if (f == NULL || elemento == NULL || !elemento || (char*) elemento < &_etext) {
     return FALSE;
