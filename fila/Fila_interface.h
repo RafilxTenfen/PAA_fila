@@ -4,19 +4,19 @@
 #define SUCCESSO 0
 #define ERRO 1
 
-typedef struct Fila *pFila;
+typedef struct Fila *fFila;
 
 // cria um fila e retorna um ponteiro para a fila
-pFila criar(int tamanho_dados);
+fFila criar(int tamanho_dados);
 
 // enfileira um novo elemento ao fim da fila
-int insere(pFila f, void *elemento);
+int insere(fFila f, void *elemento);
 
 // desinfileira o primeiro elemento da fila
-void* remove(pFila f);
+void* remove(fFila f);
 
 // destroi a fila liberando memoria
-void destroi(pFila f, int *resultado);
+int destroi(fFila f);
 
 
 #endif
