@@ -1,9 +1,6 @@
 #ifndef _fila_interface
 #define _fila_interface
 
-#define SUCCESSO 0
-#define ERRO 1
-
 typedef struct Fila *pFila;
 
 // cria um fila e retorna um ponteiro para a fila
@@ -16,7 +13,7 @@ int insere(pFila f, void *elemento);
 void* remove(pFila f);
 
 // destroi a fila liberando memoria
-void destroi(pFila f, int *resultado);
+int destroi(pFila f);
 
 
 #endif
