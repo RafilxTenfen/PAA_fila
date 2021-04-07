@@ -1,21 +1,23 @@
 #ifndef _pilha_interface
 #define _pilha_interface
 
-typedef struct Pilha *pPilha, **ppPilha;
+#include "Fila_interface.h"
+
+typedef struct Fila *fFila;
 
 // alloca memoria para pilha
-ppPilha criaPilha(int tamanho_vetor, int tamanho_info);
+fFila criaFila(int tamanho_vetor, int tamanho_info);
 
 // libera a memoria ocupada da pilha
-int destroiPilha(ppPilha pp);
+int destroiPilha(fFila pp);
 
 // adiciona elemento a pilha
-int empilha(pPilha p, void *elemento);
+int empilha(fFila p, void *elemento);
 
 // remove elemento da pilha
-void* desempilha(pPilha p);
+void* desempilha(fFila p);
 
 // retorna o valor do topo
-void* topo(pPilha p);
+void* topo(fFila p);
 
 #endif

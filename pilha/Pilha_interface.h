@@ -1,13 +1,13 @@
 #ifndef _pilha_interface
 #define _pilha_interface
 
-typedef struct Pilha *pPilha, **ppPilha;
+typedef struct Pilha *pPilha;
 
 // alloca memoria para pilha
-ppPilha criaPilha(int tamanho_vetor, int tamanho_info);
+pPilha criaPilha(int tamanho_vetor, int tamanho_info);
 
 // libera a memoria ocupada da pilha
-int destroiPilha(ppPilha pp);
+int destroiPilha(pPilha pp);
 
 // adiciona elemento a pilha
 int empilha(pPilha p, void *elemento);

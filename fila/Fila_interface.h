@@ -1,19 +1,22 @@
 #ifndef _fila_interface
 #define _fila_interface
 
-typedef struct Fila *pFila;
+#define SUCCESSO 0
+#define ERRO 1
+
+typedef struct Fila *fFila;
 
 // cria um fila e retorna um ponteiro para a fila
-pFila criar(int tamanho_dados);
+fFila criar(int tamanho_dados);
 
 // enfileira um novo elemento ao fim da fila
-int insere(pFila f, void *elemento);
+int insere(fFila f, void *elemento);
 
 // desinfileira o primeiro elemento da fila
-void* remove(pFila f);
+void* remove(fFila f);
 
 // destroi a fila liberando memoria
-int destroi(pFila f);
+int destroi(fFila f);
 
 
 #endif
