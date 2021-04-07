@@ -50,7 +50,7 @@ int insere(Fila *f, void *elemento) {
   return TRUE;
 };
 
-void* remove(Fila *f) {
+void* desenfileira(Fila *f) {
   if (f == NULL) {
     return NULL;
   }

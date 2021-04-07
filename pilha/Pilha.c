@@ -1,14 +1,16 @@
+#include <stdlib.h>
+#include <string.h>
+#include "Pilha_privado.h"
+
 #define TRUE 1
 #define FALSE 0
 
-#include "Pilha_privado.h"
-
 pPilha criaPilha(int tamanho_vetor, int tamanho_info){
-    pPilha * pp = malloc( sizeof( pPilha ) );
-    (*pp)->tamanho_info = tamanho_info;
-    (*pp)->topo = 0;
-    (*pp)->tamanho_maximo = tamanho_vetor;
-    (*pp)->dados = malloc( (*pp)->tamanho_info * (*pp)->tamanho_maximo );
+    pPilha pp = malloc( sizeof( struct Pilha ) );
+    pp->tamanho_info = tamanho_info;
+    pp->topo = 0;
+    pp->tamanho_maximo = tamanho_vetor;
+    pp->dados = malloc( pp->tamanho_info * pp->tamanho_maximo );
     return pp;
 }
 
@@ -42,7 +44,7 @@ void* topo(pPilha p){
     if( vazia( p ) ) return FALSE;
     void * destination = malloc( p->tamanho_info );
     void * source = p->dados+(p->topo-1)*p->tamanho_info;
-    int size = p->dados;
+    int size = p->tamanho_info;
     memcpy( destination, source, size );
     return destination;
 }

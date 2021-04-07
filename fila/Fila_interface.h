@@ -13,7 +13,7 @@ fFila criar(int tamanho_dados);
 int insere(fFila f, void *elemento);
 
 // desinfileira o primeiro elemento da fila
-void* remove(fFila f);
+void* desenfileira(fFila f);
 
 // destroi a fila liberando memoria
 int destroi(fFila f);

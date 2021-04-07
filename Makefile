@@ -8,8 +8,17 @@ CFLAGS  = -g -Wall -O3
 
 default: main
 
-main: main.c
-	$(CC) $(CFLAGS) main.c -o main
+Fila.o: fila/Fila.c fila/Fila_interface.h fila/Fila_privado.h
+	$(CC) $(CFLAGS) -c fila/Fila.c -o Fila.o
+
+Pilha.o: pilha/Pilha.c pilha/Pilha_interface.h pilha/Pilha_privado.h
+	$(CC) $(CFLAGS) -c pilha/Pilha.c -o Pilha.o
+
+Fila_Pilha.o: fila_pilha/Fila_pilha.c fila_pilha/Fila_pilha_interface.h fila_pilha/Fila_pilha_privado.h
+	$(CC) $(CFLAGS) -c fila_pilha/Pilha.c -o Fila_pilha.o
+
+main: main.c Fila.o Pilha.o Fila_pilha.o
+	$(CC) $(CFLAGS) main.c Fila.o Pilha.o Fila_pilha.o -o main
 
 clean:
 	rm -f main *.o core a.out *.*~ Makefile~
