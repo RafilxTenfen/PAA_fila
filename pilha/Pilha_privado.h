@@ -5,7 +5,7 @@
 
 struct Pilha {
   int topo;
-  int tamanho_vetor;
+  int tamanho_maximo;
   int tamanho_info;
   void *dados;
 };

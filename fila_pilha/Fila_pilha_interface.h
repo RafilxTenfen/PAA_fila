@@ -3,7 +3,7 @@
 
 #include "Fila_interface.h"
 
-typedef struct Fila *fFila;
+typedef struct Fila_Pilha *fp;
 
 // alloca memoria para pilha
 fFila criaFila(int tamanho_vetor, int tamanho_info);
@@ -12,10 +12,18 @@ fFila criaFila(int tamanho_vetor, int tamanho_info);
 int destroiPilha(fFila pp);
 
 // adiciona elemento a pilha
-int empilha(fFila p, void *elemento);
+int insere(fp p, void *elemento);
+/*
+verificar se a fila existe
+pegar o fim da fila sem desenfileirar
+agora tenho a pilha
+verificar se a pilha esta cheia
+senão estiver cheia, empilha o novo elemento
+Se estive cheia, criar nova pilha, adicionar elemento e enfileirar
+*/
 
 // remove elemento da pilha
-void* desempilha(fFila p);
+void* remove(fFila p);
 
 // retorna o valor do topo
 void* topo(fFila p);
