@@ -3,13 +3,15 @@
 
 typedef struct Fila_Pilha *p_fila_pilha;
 
-// alloca memoria para pilha
+// alloca memoria para criar a fila de pilhas
+// quantidade_dado_pilha -> quantidade de dados no vetor da pilha
+// tamanho_dado_pilha -> tamanho de dados a ser alocado ex.: sizeof(int)
 p_fila_pilha criaFilaPilha(int quantidade_dado_pilha, int tamanho_dado_pilha);
 
-// libera a memoria ocupada da pilha
+// libera a memoria ocupada da fila de pilhas
 int destroiFilaPilha(p_fila_pilha pp);
 
-// adiciona elemento a pilha
+// adiciona elemento na fila de pilhas
 int insereFilaPilha(p_fila_pilha p, void *elemento);
 /*
 verificar se a fila existe
@@ -29,8 +31,8 @@ Se estive cheia, criar nova pilha, adicionar elemento e enfileirar
 // não tem dados, desinfileira e invoca o remove
 void* removeFilaPilha(p_fila_pilha p);
 
-// se for inserido  [100, 80, 2] [4, 10, 3]
-// deve retornar o valor 2
+// se for inserido [4, 10, 3]
+// deve retornar o valor 3
 void* topoFilaPilha(p_fila_pilha p);
 
 #endif
