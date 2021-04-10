@@ -26,7 +26,7 @@ int enfileirar(Fila *f, void *elemento) {
   if (f == NULL || elemento == NULL || !elemento || (char*) elemento < &_etext) {
     return FALSE;
   }
-  printf("\nEnfileirar size of elem: %ld\ntamanho dados: %d", sizeof(elemento), f->tamanho_dados);
+  // printf("\nEnfileirar size of elem: %ld\ntamanho dados: %d", sizeof(elemento), f->tamanho_dados);
 
   NoFila* no = malloc(sizeof(struct NoFila));
   if (no == NULL) {
