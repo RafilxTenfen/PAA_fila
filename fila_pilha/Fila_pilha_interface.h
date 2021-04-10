@@ -22,6 +22,11 @@ Se estive cheia, criar nova pilha, adicionar elemento e enfileirar
 
 // remove elemento da fila pilha se for inserido  [100, 80, 2] [4, 10, 3]
 // e removeFilaPilha foi invocado, deve retornar 2
+// verifica se a fila existe
+// pega a pilha dentro da fila
+// verifica se a pilha tem dados
+  // tem dados, desempilha
+// não tem dados, desinfileira e invoca o remove
 void* removeFilaPilha(p_fila_pilha p);
 
 // se for inserido  [100, 80, 2] [4, 10, 3]
