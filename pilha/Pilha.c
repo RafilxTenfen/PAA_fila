@@ -9,6 +9,7 @@
 
 pPilha criaPilha(int tamanho_vetor, int tamanho_info) {
   pPilha pp = malloc(sizeof(struct Pilha));
+
   pp->tamanho_dados = tamanho_info;
   pp->topo = 0;
   pp->tamanho_maximo = tamanho_vetor;

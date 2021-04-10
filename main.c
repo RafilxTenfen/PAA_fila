@@ -11,21 +11,21 @@ int main(int argc, char** argv) {
   int resultpf1 = insereFilaPilha(pfp, &enfPilha1);
   printf("\ninsere Fila Pilha result: %d -> %d", resultpf1, enfPilha1);
 
-  int enfPilha2 = 80;
-  int resultpf2 = insereFilaPilha(pfp, &enfPilha2);
-  printf("\ninsere Fila Pilha result: %d -> %d", resultpf2, enfPilha2);
+  // int enfPilha2 = 80;
+  // int resultpf2 = insereFilaPilha(pfp, &enfPilha2);
+  // printf("\ninsere Fila Pilha result: %d -> %d", resultpf2, enfPilha2);
 
-  int enfPilha3 = 2;
-  int resultpf3 = insereFilaPilha(pfp, &enfPilha3);
-  printf("\ninsere Fila Pilha result: %d -> %d", resultpf3, enfPilha3);
+  // int enfPilha3 = 2;
+  // int resultpf3 = insereFilaPilha(pfp, &enfPilha3);
+  // printf("\ninsere Fila Pilha result: %d -> %d", resultpf3, enfPilha3);
 
-  int enfPilha4 = 4;
-  int resultpf4 = insereFilaPilha(pfp, &enfPilha4);
-  printf("\ninsere Fila Pilha result: %d -> %d", resultpf4, enfPilha4);
+  // int enfPilha4 = 4;
+  // int resultpf4 = insereFilaPilha(pfp, &enfPilha4);
+  // printf("\ninsere Fila Pilha result: %d -> %d", resultpf4, enfPilha4);
 
 
-  int* topo1 = topoFilaPilha(pfp);
-  printf("\ntopo da pilha fila -> %d", *topo1);
+  // int* topo1 = topoFilaPilha(pfp);
+  // printf("\ntopo da pilha fila -> %d", *topo1);
 
   // fFila pFila = criarFila(sizeof(int));
 

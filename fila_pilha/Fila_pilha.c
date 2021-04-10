@@ -22,6 +22,7 @@ p_fila_pilha criaFilaPilha(int quantidade_dado_pilha, int tamanho_dado_pilha) {
   }
 
   printPilha(pPilhaV);
+  // NOTE VALOR DE TAMANHO DADOS NA PILHA
 
   fFila pFila = criarFila(sizeof(pPilha));
   if (pFila == NULL) {
@@ -36,6 +37,7 @@ p_fila_pilha criaFilaPilha(int quantidade_dado_pilha, int tamanho_dado_pilha) {
   printf("\nsize of pilha: %ld", sizeof pPilhaV);
   pPilha inicioFilaPilhaValue = inicioFila(pFila);
   printPilha(inicioFilaPilhaValue);
+  // NOTE VALOR DE TAMANHO DADOS NA PILHA DNV
 
   pfp->fila = pFila;
   pfp->quantidade_dado_pilha = quantidade_dado_pilha;
