@@ -16,6 +16,9 @@ int empilha(pPilha p, void *elemento);
 void* desempilha(pPilha p);
 
 // retorna o valor do topo
-void* topo(pPilha p);
+void* topoPilha(pPilha p);
+
+// printa informações da pilha
+void printPilha(pPilha p);
 
 #endif

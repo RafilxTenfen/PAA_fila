@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 #include "Pilha_privado.h"
 
@@ -24,7 +25,9 @@ int destroiPilha(pPilha pp) {
 
 // adiciona elemento a pilha
 int empilha(pPilha p, void* elemento) {
-  if (cheia(p)) return FALSE;
+  if (cheia(p)) {
+    return FALSE;
+  }
   void* destination = p->dados + p->topo * p->tamanho_dados;
   void* source = elemento;
   int size = p->tamanho_dados;
@@ -35,13 +38,13 @@ int empilha(pPilha p, void* elemento) {
 
 // remove elemento da pilha
 void* desempilha(pPilha p) {
-  void* result = topo(p);
-  if( result != 0 ) p->topo--;
+  void* result = topoPilha(p);
+  if (result != 0) p->topo--;
   return result;
 }
 
 // retorna o valor do topo
-void* topo(pPilha p) {
+void* topoPilha(pPilha p) {
   if (vaziaP(p)) return FALSE;
   void* destination = malloc(p->tamanho_dados);
   void* source = p->dados + (p->topo - 1) * p->tamanho_dados;
@@ -58,7 +61,15 @@ int vaziaP(pPilha p) {
 }
 
 int cheia(pPilha p) {
-  if (p->topo >= p->tamanho_maximo)
+  if (p == NULL) {
+    return FALSE;
+  }
+  if (p->topo >= p->tamanho_maximo) {
     return TRUE;
+  }
   return FALSE;
+}
+
+void printPilha(pPilha p) {
+  printf("\nPRINT PILHA\nPointer %p\ntamanho_dados %d\ntopo %d\ntamanho_maximo %d", p, p->tamanho_dados, p->topo, p->tamanho_maximo);
 }

@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "pilha_privado.h": "c",
-        "pilha_interface.h": "c"
-    }
+        "pilha_interface.h": "c",
+        "fila_pilha_interface.h": "c"
+    },
+    "C_Cpp.dimInactiveRegions": false
 }

@@ -1,16 +1,16 @@
-#ifndef _pilha_interface
-#define _pilha_interface
+#ifndef _fila_pilha_interface
+#define _fila_pilha_interface
 
 typedef struct Fila_Pilha *p_fila_pilha;
 
 // alloca memoria para pilha
-p_fila_pilha criaFila(int tamanho_vetor, int tamanho_info);
+p_fila_pilha criaFilaPilha(int quantidade_dado_pilha, int tamanho_dado_pilha);
 
 // libera a memoria ocupada da pilha
-int destroiPilha(p_fila_pilha pp);
+int destroiFilaPilha(p_fila_pilha pp);
 
 // adiciona elemento a pilha
-int insere(p_fila_pilha p, void *elemento);
+int insereFilaPilha(p_fila_pilha p, void *elemento);
 /*
 verificar se a fila existe
 pegar o fim da fila sem desenfileirar
@@ -20,10 +20,12 @@ senão estiver cheia, empilha o novo elemento
 Se estive cheia, criar nova pilha, adicionar elemento e enfileirar
 */
 
-// remove elemento da pilha
-void* removeFP(p_fila_pilha p);
+// remove elemento da fila pilha se for inserido  [100, 80, 2] [4, 10, 3]
+// e removeFilaPilha foi invocado, deve retornar 2
+void* removeFilaPilha(p_fila_pilha p);
 
-// retorna o valor do topo
-void* topo(p_fila_pilha p);
+// se for inserido  [100, 80, 2] [4, 10, 3]
+// deve retornar o valor 2
+void* topoFilaPilha(p_fila_pilha p);
 
 #endif

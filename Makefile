@@ -17,8 +17,9 @@ Pilha.o: pilha/Pilha.c pilha/Pilha_interface.h pilha/Pilha_privado.h
 Fila_Pilha.o: fila_pilha/Fila_pilha.c fila_pilha/Fila_pilha_interface.h fila_pilha/Fila_pilha_privado.h
 	$(CC) $(CFLAGS) -c fila_pilha/Fila_pilha.c -o Fila_pilha.o
 
-main: main.c Fila.o Pilha.o Fila_Pilha.o
+main: clean main.c Fila.o Pilha.o Fila_Pilha.o
 	$(CC) $(CFLAGS) main.c Fila.o Pilha.o Fila_pilha.o -o main
+	./main
 
 clean:
 	rm -f main *.o core a.out *.*~ Makefile~

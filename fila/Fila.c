@@ -8,7 +8,7 @@
 #include "Fila_interface.h"
 #include "Fila_privado.h"
 
-Fila *criar(int tamanho_dados) {
+Fila *criarFila(int tamanho_dados) {
   Fila *f = (Fila *) malloc(sizeof(Fila));
   if (f == NULL) {
     return NULL;
@@ -78,7 +78,7 @@ void* desenfileira(Fila *f) {
   return dados;
 };
 
-int destroi(Fila *f) {
+int destroiFila(Fila *f) {
   if (f == NULL) {
     return FALSE;
   }
@@ -100,6 +100,30 @@ int destroi(Fila *f) {
   return TRUE;
 };
 
+void* fimFila(fFila f) {
+  if (vazia(f) == TRUE) {
+    return NULL;
+  }
+
+  NoFila* current = f->inicio;
+  while (current != NULL) {
+    if (current->prox == NULL) {
+      return current->dados;
+    }
+    current = current->prox;
+  }
+
+  return NULL;
+}
+
+void* inicioFila(fFila f) {
+  if (vazia(f) == TRUE) {
+    return NULL;
+  }
+
+  return f->inicio->dados;
+}
+
 int vazia(Fila *f) {
   if (f == NULL) {
     return TRUE;
@@ -111,4 +135,8 @@ int vazia(Fila *f) {
     return TRUE;
   }
   return FALSE;
+}
+
+void printFila(fFila f) {
+  printf("\nPRINT_FILA\npointer %p\ntamanho dados: %d", f, f->tamanho_dados);
 }
