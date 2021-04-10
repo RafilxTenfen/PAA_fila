@@ -47,7 +47,7 @@ p_fila_pilha criaFilaPilha(int quantidade_dado_pilha, int tamanho_dado_pilha) {
 }
 
 int insereNovaPilha(p_fila_pilha pfp, void* elemento) {
-  printf("\ninsereNovaPilhaINIT");
+  // printf("\ninsereNovaPilhaINIT");
   pPilha pPilha = criaPilha(pfp->quantidade_dado_pilha, pfp->tamanho_dado_pilha);
   if (pPilha == NULL) {
     return FALSE;
@@ -80,11 +80,11 @@ int insereFilaPilha(p_fila_pilha pfp, void* elemento) {
   // printf("\n");
 
   if (empilha(fimFilaPilha, elemento) == TRUE) {  // se conseguiu empilhar
-    printf("\nconseguiu empilhar");
+    // printf("\nconseguiu empilhar");
     return TRUE;
   }
 
-  printf("\npilha esta cheia, deve enfileirar uma nova");
+  // printf("\npilha esta cheia, deve enfileirar uma nova");
   // pilha esta cheia
   return insereNovaPilha(pfp, elemento);
 }
