@@ -1,35 +1,41 @@
 #include <stdio.h>
+#include "main.h"
 #include "fila_pilha/Fila_pilha_interface.h"
-// #include "fila/Fila_interface.h"
-
-#define SIZE_PILHA 3
 
 int main(int argc, char** argv) {
-  p_fila_pilha pfp = criaFilaPilha(3, sizeof(int));
+  p_fila_pilha pfp = criaFilaPilha(SIZE_PILHA, sizeof(int));
 
   int enfPilha1 = 100;
   int resultpf1 = insereFilaPilha(pfp, &enfPilha1);
-  printf("\ninsere Fila Pilha result: %d -> %d", resultpf1, enfPilha1);
+  if (resultpf1) {
+    printf("\ninsere Fila Pilha result: %d -> %d", resultpf1, enfPilha1);
+  }
 
   int enfPilha2 = 80;
   int resultpf2 = insereFilaPilha(pfp, &enfPilha2);
-  printf("\ninsere Fila Pilha result: %d -> %d", resultpf2, enfPilha2);
+  if (resultpf2) {
+    printf("\ninsere Fila Pilha result: %d -> %d", resultpf2, enfPilha2);
+  }
 
   int enfPilha3 = 2;
   int resultpf3 = insereFilaPilha(pfp, &enfPilha3);
-  printf("\ninsere Fila Pilha result: %d -> %d", resultpf3, enfPilha3);
+  if (resultpf3) {
+    printf("\ninsere Fila Pilha result: %d -> %d", resultpf3, enfPilha3);
+  }
 
   int enfPilha4 = 4;
   int resultpf4 = insereFilaPilha(pfp, &enfPilha4);
-  printf("\ninsere Fila Pilha result: %d -> %d", resultpf4, enfPilha4);
+  if (resultpf4) {
+    printf("\ninsere Fila Pilha result: %d -> %d", resultpf4, enfPilha4);
+  }
 
-  int enfPilha5 = 10;
-  int resultpf5 = insereFilaPilha(pfp, &enfPilha5);
-  printf("\ninsere Fila Pilha result: %d -> %d", resultpf5, enfPilha5);
+  // int enfPilha5 = 10;
+  // int resultpf5 = insereFilaPilha(pfp, &enfPilha5);
+  // printf("\ninsere Fila Pilha result: %d -> %d", resultpf5, enfPilha5);
 
-  int enfPilha6 = 3;
-  int resultpf6 = insereFilaPilha(pfp, &enfPilha6);
-  printf("\ninsere Fila Pilha result: %d -> %d", resultpf6, enfPilha6);
+  // int enfPilha6 = 3;
+  // int resultpf6 = insereFilaPilha(pfp, &enfPilha6);
+  // printf("\ninsere Fila Pilha result: %d -> %d", resultpf6, enfPilha6);
 
   int* remove1 = removeFilaPilha(pfp);
   if (remove1 == NULL) {
@@ -38,31 +44,33 @@ int main(int argc, char** argv) {
   }
   printf("\n\ndado removido da pilha fila -> %d", *remove1);
 
-  int* remove2 = removeFilaPilha(pfp);
-  printf("\ndado removido da pilha fila -> %d", *remove2);
+  // int* remove2 = removeFilaPilha(pfp);
+  // printf("\ndado removido da pilha fila -> %d", *remove2);
 
-  int* remove3 = removeFilaPilha(pfp);
-  printf("\ndado removido da pilha fila -> %d", *remove3);
+  // int* remove3 = removeFilaPilha(pfp);
+  // printf("\ndado removido da pilha fila -> %d", *remove3);
 
-  int* remove4 = removeFilaPilha(pfp);
-  printf("\ndado removido da pilha fila -> %d", *remove4);
+  // int* remove4 = removeFilaPilha(pfp);
+  // printf("\ndado removido da pilha fila -> %d", *remove4);
 
-  int* remove5 = removeFilaPilha(pfp);
-  printf("\ndado removido da pilha fila -> %d", *remove5);
+  // int* remove5 = removeFilaPilha(pfp);
+  // printf("\ndado removido da pilha fila -> %d", *remove5);
 
-  int* remove6 = removeFilaPilha(pfp);
-  printf("\ndado removido da pilha fila -> %d", *remove6);
+  // int* remove6 = removeFilaPilha(pfp);
+  // printf("\ndado removido da pilha fila -> %d", *remove6);
 
-  int* remove7 = removeFilaPilha(pfp);
-  if (remove7 == NULL) {
-    printf("\nremove7 is null");
-  } else {
-    printf("\ndado removido da pilha fila -> %d", *remove7);
-  }
+  // int* remove7 = removeFilaPilha(pfp);
+  // if (remove7 == NULL) {
+  //   printf("\nremove7 is null");
+  // } else {
+  //   printf("\ndado removido da pilha fila -> %d", *remove7);
+  // }
 
   int destroiResult = destroiFilaPilha(pfp);
   printf("\nDestroi fila e pilha result -> %d", destroiResult);
 
+  // TESTE DE FILA
+  // // #include "fila/Fila_interface.h"
   // int* topo1 = topoFilaPilha(pfp);
   // printf("\ntopo da pilha fila -> %d", *topo1);
 
@@ -94,5 +102,5 @@ int main(int argc, char** argv) {
   //   printf("\ndesenfileirar IS NULL");
   // }
 
-
+  return 0;
 }
