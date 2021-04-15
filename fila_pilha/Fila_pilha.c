@@ -85,18 +85,6 @@ void* retira(p_fila_pilha pfp) {
   return retira(pfp);
 }
 
-void* topo(p_fila_pilha pfp) {
-  if (pfp == NULL || pfp->fila == NULL) {
-    return NULL;
-  }
-
-  pPilha inicioFilaPilha = inicioFila(pfp->fila);
-  if (inicioFilaPilha == NULL) {
-    return NULL;
-  }
-  return topoPilha(inicioFilaPilha);
-}
-
 int destruir(p_fila_pilha pfp) {
   if (pfp == NULL) {
     return FALSE;
