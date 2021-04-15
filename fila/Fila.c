@@ -26,7 +26,6 @@ int enfileirar(Fila *f, void *elemento) {
   if (f == NULL || elemento == NULL || !elemento || (char*) elemento < &_etext) {
     return FALSE;
   }
-  // printf("\nEnfileirar size of elem: %ld\ntamanho dados: %d", sizeof(elemento), f->tamanho_dados);
 
   NoFila* no = malloc(sizeof(struct NoFila));
   if (no == NULL) {
@@ -40,18 +39,13 @@ int enfileirar(Fila *f, void *elemento) {
 
   no->prox = NULL;
   no->dados = elemento;
-  // verificar como enfileirar dados na fila
-  // void* temp = malloc(f->tamanho_dados);
-  //memcpy(no->dados, elemento, f->tamanho_dados);
-  // no->dados = temp;
 
   if (vazia(f) == TRUE) {
     f->inicio = no;
-  } else {             // contains something in the slice
-    f->fim->prox = no;  // receive next, because the end is the pointer of the previous
+  } else {
+    f->fim->prox = no;
   }
   f->fim = no;
-  // printFila(f);
   return TRUE;
 };
 
