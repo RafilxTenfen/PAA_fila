@@ -42,7 +42,7 @@ int enfileirar(Fila *f, void *elemento) {
   no->dados = elemento;
   // verificar como enfileirar dados na fila
   // void* temp = malloc(f->tamanho_dados);
-  // memcpy(no->dados, elemento, f->tamanho_dados);
+  //memcpy(no->dados, elemento, f->tamanho_dados);
   // no->dados = temp;
 
   if (vazia(f) == TRUE) {

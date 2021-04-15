@@ -2,105 +2,133 @@
 #include "main.h"
 #include "fila_pilha/Fila_pilha_interface.h"
 
+void ins_int( p_fila_pilha pfp, int value ){
+    int enfPilha1 = value;
+    int resultpf1 = insere(pfp, &enfPilha1);
+    if (resultpf1) {
+      printf("insere Fila Pilha result: %d -> %d\n", resultpf1, enfPilha1);
+    }
+}
+
+void ins_char( p_fila_pilha pfp, char value ){
+    int enfPilha1 = value;
+    int resultpf1 = insere(pfp, &enfPilha1);
+    if (resultpf1) {
+      printf("insere Fila Pilha result: %d -> %c\n", resultpf1, enfPilha1);
+    }
+}
+
+void ins_double( p_fila_pilha pfp, double value ){
+    double enfPilha1 = value;
+    int resultpf1 = insere(pfp, &enfPilha1);
+    if (resultpf1) {
+      printf("insere Fila Pilha result: %d -> %.1f\n", resultpf1, enfPilha1);
+    }
+}
+
+void ret_int( p_fila_pilha pfp ){
+    int* remove = retira(pfp);
+    if (remove == NULL) {
+      printf("remove is null\n");
+      return ;
+    }
+    printf("dado removido da pilha fila -> %d\n", *remove);
+}
+
+void ret_char( p_fila_pilha pfp ){
+    char* remove = retira(pfp);
+    if (remove == NULL) {
+      printf("remove is null\n");
+      return ;
+    }
+    printf("dado removido da pilha fila -> %c\n", *remove);
+}
+
+void ret_double( p_fila_pilha pfp ){
+    double* remove = retira(pfp);
+    if (remove == NULL) {
+      printf("remove is null\n");
+      return ;
+    }
+    printf("dado removido da pilha fila -> %.1f\n", *remove);
+}
+
+void teste_int(){
+  p_fila_pilha pfp = criar(SIZE_PILHA, sizeof(int));
+
+  ins_int( pfp, 100 );
+  ins_int( pfp, 80 );
+  ins_int( pfp, 2 );
+  ins_int( pfp, 4 );
+  ins_int( pfp, 10 );
+  ins_int( pfp, 3 );
+  ins_int( pfp, 99 );
+  ins_int( pfp, 84 );
+  ins_int( pfp, 222 );
+
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+
+  // Outro testes
+  ret_int( pfp );
+  ins_int( pfp, 1 );
+  ins_int( pfp, 2);
+  ins_int( pfp, 3);
+  ins_int( pfp, 4);
+
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+  ret_int( pfp );
+
+  ins_int( pfp, 1 );
+  ins_int( pfp, 2 );
+  ret_int( pfp );
+  ins_int( pfp, 3 );
+  ret_int( pfp );
+  ins_int( pfp, 4 );
+  ret_int( pfp );
+
+  int destroiResult = destruir(pfp);
+  printf("Destroi fila e pilha result -> %d\n", destroiResult);
+}
+
+void teste_char(){
+  p_fila_pilha pfp = criar(SIZE_PILHA, sizeof(char));
+
+  ins_char( pfp, 'a' );
+  ins_char( pfp, 'b' );
+  ins_char( pfp, 'c' );
+  
+  ret_char( pfp );
+
+  int destroiResult = destruir(pfp);
+  printf("Destroi fila e pilha result -> %d\n", destroiResult);
+}
+
+void teste_double(){
+  p_fila_pilha pfp = criar(SIZE_PILHA, sizeof(double));
+
+  ins_double( pfp, 1.0 );
+  ins_double( pfp, 2.0 );
+  ins_double( pfp, 3.0 );
+  
+  ret_double( pfp );
+  int destroiResult = destruir(pfp);
+  printf("Destroi fila e pilha result -> %d\n", destroiResult);
+}
+
 int main(int argc, char** argv) {
-  p_fila_pilha pfp = criaFilaPilha(SIZE_PILHA, sizeof(int));
-
-  int enfPilha1 = 100;
-  int resultpf1 = insereFilaPilha(pfp, &enfPilha1);
-  if (resultpf1) {
-    printf("\ninsere Fila Pilha result: %d -> %d", resultpf1, enfPilha1);
-  }
-
-  int enfPilha2 = 80;
-  int resultpf2 = insereFilaPilha(pfp, &enfPilha2);
-  if (resultpf2) {
-    printf("\ninsere Fila Pilha result: %d -> %d", resultpf2, enfPilha2);
-  }
-
-  int enfPilha3 = 2;
-  int resultpf3 = insereFilaPilha(pfp, &enfPilha3);
-  if (resultpf3) {
-    printf("\ninsere Fila Pilha result: %d -> %d", resultpf3, enfPilha3);
-  }
-
-  int enfPilha4 = 4;
-  int resultpf4 = insereFilaPilha(pfp, &enfPilha4);
-  if (resultpf4) {
-    printf("\ninsere Fila Pilha result: %d -> %d", resultpf4, enfPilha4);
-  }
-
-  // int enfPilha5 = 10;
-  // int resultpf5 = insereFilaPilha(pfp, &enfPilha5);
-  // printf("\ninsere Fila Pilha result: %d -> %d", resultpf5, enfPilha5);
-
-  // int enfPilha6 = 3;
-  // int resultpf6 = insereFilaPilha(pfp, &enfPilha6);
-  // printf("\ninsere Fila Pilha result: %d -> %d", resultpf6, enfPilha6);
-
-  int* remove1 = removeFilaPilha(pfp);
-  if (remove1 == NULL) {
-    printf("remove1 is null");
-    return 0;
-  }
-  printf("\n\ndado removido da pilha fila -> %d", *remove1);
-
-  // int* remove2 = removeFilaPilha(pfp);
-  // printf("\ndado removido da pilha fila -> %d", *remove2);
-
-  // int* remove3 = removeFilaPilha(pfp);
-  // printf("\ndado removido da pilha fila -> %d", *remove3);
-
-  // int* remove4 = removeFilaPilha(pfp);
-  // printf("\ndado removido da pilha fila -> %d", *remove4);
-
-  // int* remove5 = removeFilaPilha(pfp);
-  // printf("\ndado removido da pilha fila -> %d", *remove5);
-
-  // int* remove6 = removeFilaPilha(pfp);
-  // printf("\ndado removido da pilha fila -> %d", *remove6);
-
-  // int* remove7 = removeFilaPilha(pfp);
-  // if (remove7 == NULL) {
-  //   printf("\nremove7 is null");
-  // } else {
-  //   printf("\ndado removido da pilha fila -> %d", *remove7);
-  // }
-
-  int destroiResult = destroiFilaPilha(pfp);
-  printf("\nDestroi fila e pilha result -> %d", destroiResult);
-
-  // TESTE DE FILA
-  // // #include "fila/Fila_interface.h"
-  // int* topo1 = topoFilaPilha(pfp);
-  // printf("\ntopo da pilha fila -> %d", *topo1);
-
-  // fFila pFila = criarFila(sizeof(int));
-
-  // int enf1 = 4;
-  // int result = enfileirar(pFila, &enf1);
-  // printf("\nenfileirar result: %d -> %d", result, enf1);
-
-  // int enf2 = 8;
-  // int result2 = enfileirar(pFila, &enf2);
-  // printf("\nenfileirar result2: %d -> %d", result2, enf2);
-
-  // int enf3 = 15;
-  // int result3 = enfileirar(pFila, &enf3);
-  // printf("\nenfileirar result3: %d -> %d", result3, enf3);
-
-  // int* desenf1 = desenfileira(pFila);
-  // printf("\ndesenfileirar -> %d", *desenf1);
-
-  // int* desenf2 = desenfileira(pFila);
-  // printf("\ndesenfileirar -> %d", *desenf2);
-
-  // int* desenf3 = desenfileira(pFila);
-  // printf("\ndesenfileirar -> %d", *desenf3);
-
-  // int* desenf4 = desenfileira(pFila);
-  // if (desenf4 == NULL) {
-  //   printf("\ndesenfileirar IS NULL");
-  // }
+  teste_int();
 
   return 0;
 }

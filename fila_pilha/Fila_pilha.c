@@ -9,13 +9,13 @@
 #define TRUE 1
 #define FALSE 0
 
-p_fila_pilha criaFilaPilha(int quantidade_dado_pilha, int tamanho_dado_pilha) {
+p_fila_pilha criar(int quantidade_dado_pilha, int tamanho_dado_pilha) {
   p_fila_pilha pfp = malloc(sizeof(Fila_Pilha));
   if (pfp == NULL || quantidade_dado_pilha <= 0 || tamanho_dado_pilha <= 0) {
     return NULL;
   }
 
-  printf("\ncriaFilaPilha qnt: %d tamanhoInfo: %d", quantidade_dado_pilha, tamanho_dado_pilha);
+  //printf("criaFilaPilha qnt: %d tamanhoInfo: %d\n", quantidade_dado_pilha, tamanho_dado_pilha);
   pPilha pPilhaV = criaPilha(quantidade_dado_pilha, tamanho_dado_pilha);
   if (pPilhaV == NULL) {
     return NULL;
@@ -54,14 +54,14 @@ int insereNovaPilha(p_fila_pilha pfp, void* elemento) {
   }
   // printPilha(pPilha);
   if (empilha(pPilha, elemento) == FALSE) {  // algo de errado aconteceu ao empilhar
-    printf("insereNovaPilha empilha deu false");
+    //printf("insereNovaPilha empilha deu false");
     return FALSE;
   }
   // printPilha(pPilha);
   return enfileirar(pfp->fila, pPilha);
 }
 
-int insereFilaPilha(p_fila_pilha pfp, void* elemento) {
+int insere(p_fila_pilha pfp, void* elemento) {
   // printf("\n\ninsereFilaPilha");
   if (pfp == NULL || pfp->fila == NULL) {
     return FALSE;
@@ -69,7 +69,7 @@ int insereFilaPilha(p_fila_pilha pfp, void* elemento) {
 
   pPilha fimFilaPilha = fimFila(pfp->fila);
   if (fimFilaPilha == NULL) {
-    printf("\nfim da fila is null, nao deve cair aqui");  // mas se cair, insere novo rsrs
+    //printf("\nfim da fila is null, nao deve cair aqui");  // mas se cair, insere novo rsrs
     return insereNovaPilha(pfp, elemento);
   }
 
@@ -89,7 +89,7 @@ int insereFilaPilha(p_fila_pilha pfp, void* elemento) {
   return insereNovaPilha(pfp, elemento);
 }
 
-void* removeFilaPilha(p_fila_pilha pfp) {
+void* retira(p_fila_pilha pfp) {
   if (pfp == NULL || pfp->fila == NULL) {
     return NULL;
   }
@@ -97,7 +97,7 @@ void* removeFilaPilha(p_fila_pilha pfp) {
   // pPilha inicioFilaPilha = desenfileira(pfp->fila);
   pPilha inicioFilaPilha = inicioFila(pfp->fila);
   if (inicioFilaPilha == NULL) {  // nao tem fila
-    printf("\nremoveFilaPilha nao tem mais dados na fila");
+    //printf("\nremoveFilaPilha nao tem mais dados na fila");
     return NULL;
   }
 
@@ -108,21 +108,21 @@ void* removeFilaPilha(p_fila_pilha pfp) {
   }
 
   // não tem mais dados na pilha, pode desinfileirar
-  printf("\nremoveFilaPilha nao tem mais dados na PILHA, deve desenfileirar");
+  //printf("\nremoveFilaPilha nao tem mais dados na PILHA, deve desenfileirar");
   if (desenfileira(pfp->fila) == NULL) {
     return NULL;
   }
-  return removeFilaPilha(pfp);
+  return retira(pfp);
 }
 
-void* topoFilaPilha(p_fila_pilha pfp) {
+void* topo(p_fila_pilha pfp) {
   if (pfp == NULL || pfp->fila == NULL) {
     return NULL;
   }
 
   pPilha inicioFilaPilha = inicioFila(pfp->fila);
   if (inicioFilaPilha == NULL) {
-    printf("inicio da fila is null");
+    //printf("inicio da fila is null");
     return NULL;
   }
   // printf("\n topoFilaPilha INIT");
@@ -130,7 +130,7 @@ void* topoFilaPilha(p_fila_pilha pfp) {
   return topoPilha(inicioFilaPilha);
 }
 
-int destroiFilaPilha(p_fila_pilha pfp) {
+int destruir(p_fila_pilha pfp) {
   if (pfp == NULL) {
     return FALSE;
   }
